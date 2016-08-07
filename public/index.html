@@ -2,10 +2,29 @@
 <html>
 <head>
   <title>Jumpy Cat</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div>
+  <div ng-app='myApp'>
     <p>Hello World</p>
+
+    <!-- Meetup View -->
+    <div ng-controller='meetupsCtrl'>
+      <h1>There are {{meetupsCount}} meetups</h1>
+      <ul>
+        <li ng-repeat='meetup in meetups' class="meetup">{{meetup.name}}</li>
+      </ul>
+      <form ng-submit="createMeetup()">
+        <input type="text" name="" placeholder="Meetup name" ng-model="meetupName" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
   </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular/angular-resource.js"></script>
+  <script src="app.js"></script>
+  <script src="meetups-controller.js"></script>
+  <!-- <script src="lib/angular-route/angular-route.js"></script> -->
 </body>
 </html>
