@@ -1,1 +1,1 @@
-var app = angular.module('myApp', [])  //init a new module
+var app = angular.module('myApp', ['ngResource'])  //init a new module
