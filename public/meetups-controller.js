@@ -14,7 +14,10 @@ app.controller('meetupsCtrl', function($scope, $http, $resource) { //init contro
 
     var meetup = new Meetup();
     meetup.name = $scope.meetupName;
+    console.log(meetup.name);
+    $scope.meetupName = "";
     meetup.$save();
+
   };
 
 });
