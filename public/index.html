@@ -10,9 +10,11 @@
 
     <!-- Meetup View -->
     <div ng-controller='meetupsCtrl'>
-      <h1>There are {{meetupsCount}} meetups</h1>
+      <h1>There are {{meetups.length}} meetups</h1>
       <ul>
-        <li ng-repeat='meetup in meetups' class="meetup">{{meetup.name}}</li>
+        <li ng-repeat='meetup in meetups' class="meetup">{{meetup.name}}
+        <button ng-click='deleteMeetup(meetup)'>Delete</button>
+        </li>
       </ul>
       <form ng-submit="createMeetup()">
         <input type="text" name="" placeholder="Meetup name" ng-model="meetupName" />
